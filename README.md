@@ -13,7 +13,7 @@ A web-based **scientific calculator** designed to mimic the **Casio MS-82** calc
 ✅ **Dual-line Display**: Expression & Result  
 
 ## 📸 Screenshot
-![MS-82 Calculator](screenshot.png) *(Add a real screenshot of your calculator here)*
+![MS-82 Calculator](Abiud.jpg)
 
 ---
 
