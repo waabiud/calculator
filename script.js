@@ -1,53 +1,21 @@
-let expression = document.getElementById("expression");
-let result = document.getElementById("result");
-let memory = 0;
-
-function appendToDisplay(value) {
-    expression.value += value;
+function insert(value) {
+    document.getElementById("display").value += value;
 }
 
 function clearDisplay() {
-    expression.value = "";
-    result.value = "";
+    document.getElementById("display").value = "";
 }
 
-function deleteLast() {
-    expression.value = expression.value.slice(0, -1);
+function delChar() {
+    let display = document.getElementById("display");
+    display.value = display.value.slice(0, -1);
 }
 
-function calculateResult() {
+function calculate() {
+    let display = document.getElementById("display").value;
     try {
-        result.value = eval(expression.value);
-    } catch (error) {
-        result.value = "Error";
+        document.getElementById("display").value = eval(display);
+    } catch {
+        document.getElementById("display").value = "Error";
     }
-}
-
-function calculateFactorial() {
-    let num = parseInt(expression.value);
-    if (isNaN(num) || num < 0) {
-        result.value = "Error";
-        return;
-    }
-    let factorial = 1;
-    for (let i = 1; i <= num; i++) {
-        factorial *= i;
-    }
-    result.value = factorial;
-}
-
-function memoryAdd() {
-    memory += parseFloat(result.value || 0);
-}
-
-function memorySubtract() {
-    memory -= parseFloat(result.value || 0);
-}
-
-function memoryRecall() {
-    expression.value = memory.toString();
-}
-
-function memoryClear() {
-    memory = 0;
 }
